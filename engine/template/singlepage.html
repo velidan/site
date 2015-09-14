@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+
+<script type="text/javascript">var a = {{ article | json | safe }};
+console.log(a);
+</script>
+
+
+
+
+<h1>Тестовый блог</h1>
+
+<h2>Ид Поста: {{article.id}}</h2><br>
+<h2>Название поста: {{article.title}}</h2><br>
+<h2>Описание поста: {{article.description}}</h2><br>
+<h2>Автор поста: {{article.author}}</h2>
+
+</body>
+</html>

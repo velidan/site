@@ -1,0 +1,40 @@
+extends ../layouts/mainTerminalLayout
+
+block header
+
+block top
+    h1 Запрашивается идентификация
+block body
+    form(method="post",enctype="multipart/form-data",id="loginForm")
+        label Логин
+        input(type="text",name="login",placeholder="Логин")
+        label Пароль
+        input(type="password",name="password",placeholder="Пароль")
+        button Идентификация
+
+block footer
+    a(href="/") На главную
+
+block scripts
+     script(type="text/javascript").
+        /* var form = document.getElementById('loginForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                e.preventDefault();
+                var formData = new FormData(this);
+                var processStatus = function (response) {
+                    // status "0" to handle local files fetching (e.g. Cordova/Phonegap etc.)
+                    if (response.status === 200 || response.status === 0) {
+                        return Promise.resolve(response)
+            } else {
+        return Promise.reject(new Error(response.statusText))
+        }
+        };
+        fetch('/terminal', {method : 'post',
+        body : formData})
+        .then(function(response) {
+        /* alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+        alert(response.status); // 200*/
+        /*
+        }) .catch( alert );
+        }); */
