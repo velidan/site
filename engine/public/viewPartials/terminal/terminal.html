@@ -3,11 +3,17 @@
 <h2>Форма создания статьи</h2>
 
 
-<form method="post" id="articleForm" enctype="multipart/form-data" ng-controller="terminalCreateArticle">
+<form novalidate id="articleForm" enctype="multipart/form-data" data-ng-controller="terminalCreateArticle">
     <label>Название статьи</label>
-    <input type="text" placeholder="Название статьи">
+    <input type="text" placeholder="Название статьи" data-ng-model="article.title">
+    <label>Категория</label>
+    <input type="text" placeholder="Название категории статьи" data-ng-model="article.category">
+    <label>Короткое описание</label>
+    <input type="text" placeholder="Короткое описание" data-ng-model="article.description">
+    <label>Метки</label>
+    <input type="text" placeholder="Метки" data-ng-model="article.tags">
     <label>Тело статьи</label>
-    <textarea></textarea>
-    <button>Создать статью</button>
+    <textarea data-ng-model="article.text"></textarea>
+    <button data-ng-click="articleCreate()">Создать статью</button>
 </form>
 

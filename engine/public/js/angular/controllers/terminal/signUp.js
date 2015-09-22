@@ -51,19 +51,28 @@
 
 					operateAuthStatus.call($scope, userInfoObj.authStatus);
 
-                }, function (response) {
+                }, function (reject) {
                     console.log('Возникла ошибка при идентификации');
                 })
 
         };
 
-		$scope.text = "Hello World!!!!";
 	}]);
 
 
 
 	terminal.controller('terminalCreateArticle',['$scope', '$http', function ($scope, $http) {
+		var articleData = {};
+		$scope.articleCreate = function () {
+			articleData = angular.copy($scope.article);
 
+			$http.post('/terminal/articleSave', articleData).
+				then(function (response) {
+					console.log(response);
+				}, function (reject) {
+					console.log('Возникла ошибка при создании статьи');
+				})
+		}
 	}]);
 
 

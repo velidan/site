@@ -1,0 +1,37 @@
+{
+  "name": "wellnine",
+  "version": "1.0.0",
+  "description": "A wellnine Project site",
+  "main": "/engine/server/index.js",
+  "dependencies": {
+    "app-root-path": "^1.0.0",
+    "co-monk": "^1.0.0",
+    "koa": "^1.0.0",
+    "koa-better-body": "^1.0.17",
+    "koa-jade": "^1.1.0",
+    "koa-router": "^5.1.2",
+    "koa-session": "^3.3.1",
+    "koa-static": "^1.4.9",
+    "monk": "^1.0.1",
+    "nodemon": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wellnine/site.git"
+  },
+  "keywords": [
+    "wellnine",
+    "wite",
+    "project"
+  ],
+  "author": "Velidan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wellnine/site/issues"
+  },
+  "homepage": "https://github.com/wellnine/site#readme"
+}
