@@ -1,42 +1,18 @@
-(function(root){
+(function(window){
 
-	var terminal = angular.module('terminal', [
-		'ngRoute',
-		'ngAnimate'
-	]);
+	angular.module('terminal')
+		.controller('signUpController', ['$scope','$http', '$location', function($scope, $http, $location) {
 
 
-
-/*	terminal.directive('isAuthorized', function () {
-		return {
-			restrict : 'A',
-			link : function (scope, element, attrs) {
-				scope.isAuthorized = attrs.isAuthorized;
-				a = attrs.isAuthorized;
+		if (UTIL.getCookie('isAuthorized')) {
+			var path = $location.path();
+			if (path === "/") {
+				$location.path('/panel');
+			} else {
+				$location.path($location.path());
 			}
+
 		}
-	});*/
-/*	terminal.config(['$routeProvider',
-		function($routeProvider) {
-			$routeProvider.
-				when('/signIn', {
-					templateUrl: '/viewPartials/terminal/signUp.html',
-					controller: 'TerminalController'
-				}).
-				otherwise({
-					redirectTo: '/signIn'
-				});
-		}]);*/
-
-	terminal.controller('TerminalController', ['$scope','$http', function($scope, $http) {
-
-
-		if (getCookie('isAuthorized')) {
-			$scope.templateUrl = '/viewPartials/terminal/terminal.html';
-		} else {
-			$scope.templateUrl = '/viewPartials/terminal/signUp.html';
-		}
-
 
         $scope.userData = {};
 
@@ -49,7 +25,7 @@
 						userData = userInfoObj.userData;
 
 
-					operateAuthStatus.call($scope, userInfoObj.authStatus);
+					operateAuthStatus.call($scope, userInfoObj.authStatus, $location);
 
                 }, function (reject) {
                     console.log('Возникла ошибка при идентификации');
@@ -59,49 +35,20 @@
 
 	}]);
 
+	function operateAuthStatus(authStatus, $location) {
 
-
-	terminal.controller('terminalCreateArticle',['$scope', '$http', function ($scope, $http) {
-		var articleData = {};
-		$scope.articleCreate = function () {
-			articleData = angular.copy($scope.article);
-
-			$http.post('/terminal/articleSave', articleData).
-				then(function (response) {
-					console.log(response);
-				}, function (reject) {
-					console.log('Возникла ошибка при создании статьи');
-				})
-		}
-	}]);
-
-
-	function operateAuthStatus(authStatus) {
-		var $scope = this;
-
-console.log(authStatus);
 		switch (authStatus) {
 			case 0 :
 				console.log('Пользователь не найден');
 				break;
 			case 1 :
-				$scope.templateUrl = "/viewPartials/terminal/terminal.html";
+				$location.path('/panel');
 				break;
 			case 2 :
 				console.log('Неверный пароль');
 				break;
 		}
 	}
-
-
-
-	function getCookie(name) {
-		var matches = document.cookie.match(new RegExp(
-			"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-		));
-		return matches ? decodeURIComponent(matches[1]) : undefined;
-	}
-
 
 }(window));
 

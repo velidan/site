@@ -5,33 +5,22 @@ html(data-ng-app="terminal")
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(href="/css/terminal.css",rel="stylesheet",type="text/css")
-        link(href="/css/bootstrap/bootstrap.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/animate.min.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/custom.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/icheck/flat/green.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/editor/external/google-code-prettify/prettify.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/editor/index.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/select/select2.min.css",rel="stylesheet",type="text/css")
-        link(href="/css/layout/switchery/switchery.min.css",rel="stylesheet",type="text/css")
-        link(href="/fonts/css/font-awesome.min.css",rel="stylesheet",type="text/css")
-        script(type='text/javascript',src="/js/jquery-2.1.4.js")
-        script(type='text/javascript',src="/js/angular/angular_1_4_4/angular.min.js")
-        script(type='text/javascript',src="/js/angular/angular_1_4_4/angular-route.js")
-        script(type='text/javascript',src="/js/angular/angular_1_4_4/angular-animate.js")
-        script(type='text/javascript',src="/js/angular/route.js")
-        script(type='text/javascript',src="/js/angular/controllers/terminal/signUp.js")
-        script(type='text/javascript',src="/js/bootstrap.js")
+        link(href="/compile/css/compiled.css",rel="stylesheet",type="text/css")
+        script(type='text/javascript',src="/compile/js/thirdparty/compiled.js")
+        script(type='text/javascript',src="/compile/js/utility/compiled.js")
+        script(type='text/javascript',src="/compile/js/angular/compiled.js")
+
+
+
         block header
     body()
-      div(data-ng-controller="TerminalController")
+      div(data-ng-controller="signUpController")
         block top
 
-        div(class="bodyBox animate" data-ng-include='templateUrl')
+        <!-- div(class="bodyBox animate" data-ng-include='templateUrl') -->
+        div(class="bodyBox animate" data-ng-view)
         block body
 
         block footer
-
-        script(src="/js/fetch.js",type="text/javascript")
 
         block scripts

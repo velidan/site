@@ -64,7 +64,7 @@ Terminal.prototype.identify = function () {
         /* Отправляем результат идентификации Ангуляру */
         this.response.body = userInfo;
         /* Закрываем соединение с ДБ */
-        db.close();
+      //  db.close();
     }
 };
 
@@ -104,10 +104,16 @@ Terminal.prototype.userAuth = function (dataObj) {
     var db = this.config.DB;
         db.connect();
 
+    var Model = db.getModel('users', {
+        login : String,
+        password : String,
+        role : String
+    });
         /* Создаем промис для запроса к базе и дальнейшей идентификации */
         return new Promise((resolve, reject) => {
                 /* Запрос на извлечение пользователя из бд */
-                db.getTable('users').find({'login' : dataObj.name}, function (err, user) {
+
+                Model.find({'login' : dataObj.name}, function (err, user) {
                     if (err) {reject(err)};
                     /* Обьект для полной информации о пользователе */
                     var userInfo = {};
@@ -127,6 +133,7 @@ Terminal.prototype.userAuth = function (dataObj) {
 
                     userInfo.userData = user;
 
+                    db.close();
                     /* Отправляем статус обратно из промиса */
                     resolve(userInfo);
                 });

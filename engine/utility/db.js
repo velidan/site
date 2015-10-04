@@ -1,5 +1,6 @@
 /* Class for DB operations */
-var monk = require('monk');
+//var monk = require('monk');
+var mongoose = require('mongoose');
 /**
  * open db connection
  * @param hostName
@@ -12,7 +13,7 @@ function DB(hostName, port, dbName) {
     this.port = port;
     this.dbName  = dbName;
 
-    this.table = null;
+    this.model = null;
 }
 
 
@@ -21,20 +22,29 @@ function DB(hostName, port, dbName) {
  */
 DB.prototype.connect = function() {
 
-    this.dbConnection = monk(this.hostName + ':' + this.port + '/' + this.dbName);
+    mongoose.connect(this.hostName + ':' + this.port + '/' + this.dbName);
+    this.dbConnection = mongoose.connection;
+
+    this.dbConnection.on('error', console.error.bind(console, 'connection error:'));
+    this.dbConnection.once('open', function (callback) {console.log('DB connection open'); });
 
     return this.dbConnection;
 };
 
 /**
- * get table from db
- * @param tableName
- * @returns {table | null}
+ * get model
+ * @param schemeName {String} -> Name of scheme
+ * @param scheme {Object} -> Mongoose scheme config
+ * @returns {Model}
  */
-DB.prototype.getTable = function (tableName) {
-    this.table = this.dbConnection.get(tableName);
+DB.prototype.getModel = function (schemeName, scheme) {
+    var Schema;
 
-   return this.table;
+    Schema = new mongoose.Schema(scheme);
+
+    this.model = mongoose.model(schemeName, Schema);
+
+   return this.model;
 };
 /**
  * close connection

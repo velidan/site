@@ -5,22 +5,23 @@ var app  = module.exports =  require('koa')(),
     staticRoot = path.join(engineRoot, 'public'),
     templateRoot = path.join(engineRoot, 'template'),
     body = require('koa-better-body'),
-    jade = require('koa-jade'),
+    Jade = require('koa-jade'),
     session = require('koa-session'),
     router = require('../config/route.js');
 
 
-//app.keys = ['authorized'];
-//app.use(session(app));
-
-app.use(require('koa-static')(staticRoot));
-
-app.use(jade.middleware({
+var jadeInstance = new Jade({
     viewPath: templateRoot,
     debug: false,
     pretty: false,
     compileDebug: false
-}));
+});
+
+//app.keys = ['authorized'];
+//app.use(session(app));
+app.use(require('koa-static')(staticRoot));
+
+app.use(jadeInstance.middleware);
 
 
 app.use(body({

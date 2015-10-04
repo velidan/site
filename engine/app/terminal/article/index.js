@@ -1,8 +1,6 @@
 /**
  * Created by Cronix-23-ZTan on 29.08.2015.
  */
-
-
 /**
  * Export Article module
  * @param config {Object} - some config for Article module
@@ -10,6 +8,7 @@
  */
 module.exports = function (config) {
     return new Article(config);
+
 };
 
 /**
@@ -19,6 +18,9 @@ module.exports = function (config) {
  */
 function Article(config) {
     this.config = config;
+
+    this.ImageCernel = require(config.rootPath + '/utility/image/ImageKernel');
+
 }
 
 /**
@@ -36,7 +38,7 @@ Article.prototype.routerChunk = function () {
         },
         post : {
             url : '/terminal/articleSave',
-            middleware : Module.articleGet()
+            middleware : Module.articleSave()
         }
     }
 };
@@ -51,6 +53,8 @@ Article.prototype.articleCreate =  function () {
 
     return function* (next) {
         console.log(this.request.body);
+
+
     }
 };
 
@@ -62,6 +66,7 @@ Article.prototype.articleSave = function () {
     var Module = this;
 
     return function* (next) {
+        console.log("Article/index -> articleSave")
         console.log(this.request.body);
     }
 };
@@ -74,12 +79,20 @@ Article.prototype.articleGet = function () {
     var Module = this;
 
     return function* (next) {
-        var db = Module.config.DB;
+     /*   var db = Module.config.DB,
+            Model;
         db.connect();
 
-        db.getTable('users').find({'login' : 'Velidan'},  function (err, user) {
+        Model = db.getModel('users', {
+            login : String,
+            password : String,
+            role : String
+        });
+
+
+        Model.findOne({'login' : 'Velidan'},  function (err, user) {
             console.log(user);
             db.close();
-        });
+        });*/
     }
 };
