@@ -114,7 +114,7 @@ $(function () {
     });
 
 
-    // Import image
+    // Import loader
     var $inputImage = $('#inputImage'),
         URL = window.URL || window.webkitURL,
         blobURL;
@@ -134,7 +134,7 @@ $(function () {
             }).cropper('reset', true).cropper('replace', blobURL);
             $inputImage.val('');
           } else {
-            showMessage('Please choose an image file.');
+            showMessage('Please choose an loader file.');
           }
         }
       });

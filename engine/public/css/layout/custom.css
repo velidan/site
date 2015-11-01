@@ -4659,7 +4659,7 @@ ul.project_files li a i {
     border-right: 2px solid transparent;
 }
 /* *********  /pricing  **************************** */
-/* *********  media gallery  **************************** */
+/* *********  loader gallery  **************************** */
 
 .thumbnail .image {
     height: 120px;
@@ -4784,7 +4784,7 @@ ul.project_files li a i {
 .view-first:hover p {
     transition-delay: 0.1s;
 }
-/* *********  /media gallery  **************************** */
+/* *********  /loader gallery  **************************** */
 /* *********  verticle tabs  **************************** */
 /*!
  * bootstrap-vertical-tabs - v1.2.1
@@ -4904,7 +4904,7 @@ ul.project_files li a i {
     transform: rotate(-90deg);
 }
 /* *********  /verticle tabs  **************************** */
-/* *********  image cropping  **************************** */
+/* *********  loader cropping  **************************** */
 /*!
  * Cropper v0.8.0
  * https://github.com/fengyuanchen/cropper
@@ -5309,7 +5309,7 @@ ul.project_files li a i {
     filter: alpha(opacity=75);
     z-index: 20140628;
 }
-/* *********  /image cropping  **************************** */
+/* *********  /loader cropping  **************************** */
 /* *********  moris  **************************** */
 
 .morris-hover {

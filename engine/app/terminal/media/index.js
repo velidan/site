@@ -20,13 +20,13 @@ module.exports = function (config) {
  */
 function Media(config) {
     this.config = config;
-    /* path to media folder */
+    /* path to loader folder */
     this.mediaFolderPath = '/public/media/';
-    /* require Image core class */
-    this.ImageKernel = require(GLOBALSTUFF.rootAppPath + '/utility/image/ImageKernel');
+    /* require loader core class */
+    this.Loader = require(GLOBALSTUFF.rootAppPath + '/utility/loader/loader');
 
 
-    /* media file data storage (including the file itself) */
+    /* loader file data storage (including the file itself) */
     this.mediaFileStuff = {};
 
     /* path where file was saved */
@@ -58,7 +58,7 @@ Media.prototype.fileName = function () {
 };
 
 /**
- * Load media file
+ * Load loader file
  * @returns generator middleware for Koa
  */
 Media.prototype.mediaLoad =  function () {
@@ -85,16 +85,16 @@ Media.prototype.mediaLoad =  function () {
         Media_Module.mediaFileStuff.file = this.request.body.files.file; /* file */
         Media_Module.savePath =  GLOBALSTUFF.rootAppPath + Media_Module.mediaFolderPath + 'img/';
 
-        console.log(Media_Module.fileName());
-
         var deferred = q.defer(), /* create promise */
             ctx = this, /* koa context */
-            ImageKernel = new Media_Module.ImageKernel(Media_Module.mediaFileStuff.file), /* image handler class */
+            ImageKernel = new Media_Module.Loader(Media_Module.mediaFileStuff.file), /* loader handler class */
             responsePromiseData,
+            /* file source name */
             fileSourceName = Media_Module.mediaFileStuff.file.name,
-            fileType = GLOBALSTUFF.UTILITY.getFileType(Media_Module.mediaFileStuff.file);
-
-            console.log(Media_Module.mediaFileStuff.file.name);
+            /* get the type of file (loader/video or audio) */
+            fileType = GLOBALSTUFF.UTILITY.getFileType(Media_Module.mediaFileStuff.file),
+            /* name of file if passed from dashboard or use sourceName as Name */
+            fileName = (Media_Module.fileName()) ? Media_Module.fileName() : fileSourceName;
 
         /* if some file was passed */
         if (Media_Module.mediaFileStuff.file) {
@@ -103,18 +103,18 @@ Media.prototype.mediaLoad =  function () {
                 if (fileLoaded) {
 
                     mediaModel = new mediaModelScheme({
-                        name : 'image',
+                        name : fileName,
                         sourceName : fileSourceName,
-                        altText : 'Якийсь текст',
-                        detail : [{album : 'myAlbum'
-                                  ,category : 'Nude'
+                        altText : Media_Module.mediaFileStuff.fileData.description,
+                        detail : [{album : Media_Module.mediaFileStuff.fileData.album
+                                  ,category : Media_Module.mediaFileStuff.fileData.category
                                   ,type : fileType}],
                         date : Date.now()
                     });
 
-                /*    db.saveModel(mediaModel, function (mediaModel) {
+                    db.saveModel(mediaModel, function (mediaModel) {
                         console.log("File is Saved");
-                    });*/
+                    });
 
 
 

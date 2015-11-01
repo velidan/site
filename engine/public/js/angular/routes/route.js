@@ -15,7 +15,7 @@ angular.module('terminal')
             })
 
             // route for the contact page
-            .when('/media', {
+            .when('/loader', {
                 templateUrl : '/viewPartials/terminal/mediaKernel.html',
                 controller  : 'terminalLoadMedia'
             })

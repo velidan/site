@@ -1,8 +1,19 @@
 <h2>Медиа - центр</h2>
 <form novalidate id="mediaForm" enctype="multipart/form-data" data-ng-controller="terminalLoadMedia">
-    <label ng-show="isFileSelected">Вы можете ввести имя файла
-        <input data-ng-model="fileData.name" name="fileName" type="text">
-    </label>
+    <div class="additionalOptions" ng-show="isFileSelected">
+        <label >Вы можете ввести имя файла
+            <input data-ng-model="fileData.name" name="fileName" type="text">
+        </label>
+        <label >Вы можете ввести описание для файла
+            <input data-ng-model="fileData.description" name="fileDesc" type="text">
+        </label>
+        <label >Вы можете ввести Категорию для файла
+            <input data-ng-model="fileData.category" name="fileCategory" type="text">
+        </label>
+        <label >Вы можете ввести Название альбома для файла
+            <input data-ng-model="fileData.album" name="fileAlbum" type="text">
+        </label>
+    </div>
     <label>Выберите файл</label>
     <input data-bind-file="" type="file" placeholder="Выберите файл" name="mediaFlie" data-file-model="file_1">
 

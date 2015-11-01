@@ -3471,8 +3471,8 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * contain a matching ref value.
  *
  * The two images match since they share the same ref value. ngAnimate will now create a
- * transport element (which is a clone of the first image element) and it will then attempt
- * to animate to the position of the second image element in the next view. For the animation to
+ * transport element (which is a clone of the first loader element) and it will then attempt
+ * to animate to the position of the second loader element in the next view. For the animation to
  * work a special CSS class called `ng-anchor` will be added to the transported element.
  *
  * We can now attach a transition onto the `.banner.ng-anchor` CSS class and then
