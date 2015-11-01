@@ -19,7 +19,7 @@ module.exports = function (config) {
 function Article(config) {
     this.config = config;
 
-    this.Loader = require(config.rootPath + '/utility/loader/loader');
+    this.ImageKernel = require(config.rootPath + '/utility/image/imageKernel');
 
 }
 

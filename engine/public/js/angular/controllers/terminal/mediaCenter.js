@@ -16,7 +16,6 @@
 
             if (!UTIL.getCookie('isAuthorized')) { $location.path('/'); }
 
-
             $scope.isFileSelected = false;
 
                 /**

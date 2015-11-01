@@ -7,15 +7,20 @@ var app  = module.exports =  require('koa')(),
     body = require('koa-better-body'),
     Jade = require('koa-jade'),
     session = require('koa-session'),
-    router = require('../config/route.js');
+    router,
 
-
-var jadeInstance = new Jade({
+    jadeInstance = new Jade({
     viewPath: templateRoot,
     debug: false,
     pretty: false,
     compileDebug: false
 });
+
+/* initialize GLOBAL config  before app start parse url*/
+global.GLOBALSTUFF = require('../config/config.js');
+
+/* init router */
+router = require('../config/route.js');
 
 //app.keys = ['authorized'];
 //app.use(session(app));

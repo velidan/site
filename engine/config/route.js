@@ -1,33 +1,21 @@
 var router = require('koa-router')(),
-    nodePath = require('path'),
-/* ���������� ������ ��� ��� - �������� �������� � �������� engine
- * ���������:  e:\�Malder�\Web\[1_Node]\Wellnine/engine */
-    rootAppPath = nodePath.normalize(nodePath.resolve(require('app-root-path').path) + '/engine'),
-    DB_Instance = require(rootAppPath +  '/utility/db')('localhost', 27017, 'Wellnine'),
-    UTILITY = require(rootAppPath +  '/utility/Utility');
 
-
-global.GLOBALSTUFF = {
-    DB : DB_Instance,
-    rootAppPath : rootAppPath,
-    UTILITY : UTILITY
-};
-
-var terminal = require(rootAppPath + '/app/terminal/index')({
-        DB : DB_Instance,
-        rootPath : rootAppPath
+/* TODO - > write an autoloader for app modules */
+   terminal = require(GLOBALSTUFF.rootAppPath + '/app/terminal/index')({
+        DB : GLOBALSTUFF.DB,
+        rootPath : GLOBALSTUFF.rootAppPath
     }),
     terminalRoute = terminal.routerChunk(),
 
-    terminalArticle = require(rootAppPath + '/app/terminal/article/index.js')({
-        DB : DB_Instance,
-        rootPath : rootAppPath
+    terminalArticle = require(GLOBALSTUFF.rootAppPath + '/app/terminal/article/index.js')({
+        DB : GLOBALSTUFF.DB,
+        rootPath : GLOBALSTUFF.rootAppPath
     }),
     terminalArticleRoute = terminalArticle.routerChunk(),
 
-    terminalMedia = require(rootAppPath + '/app/terminal/media/index.js')({
-        DB : DB_Instance,
-        rootPath : rootAppPath
+    terminalMedia = require(GLOBALSTUFF.rootAppPath + '/app/terminal/media/index.js')({
+        DB : GLOBALSTUFF.DB,
+        rootPath : GLOBALSTUFF.rootAppPath
     }),
     terminalMediaRoute = terminalMedia.routerChunk();
 

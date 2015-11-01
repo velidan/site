@@ -23,7 +23,7 @@ function Media(config) {
     /* path to loader folder */
     this.mediaFolderPath = '/public/media/';
     /* require loader core class */
-    this.Loader = require(GLOBALSTUFF.rootAppPath + '/utility/loader/loader');
+    this.ImageKernel = require(GLOBALSTUFF.rootAppPath + '/utility/image/ImageKernel');
 
 
     /* loader file data storage (including the file itself) */
@@ -87,7 +87,7 @@ Media.prototype.mediaLoad =  function () {
 
         var deferred = q.defer(), /* create promise */
             ctx = this, /* koa context */
-            ImageKernel = new Media_Module.Loader(Media_Module.mediaFileStuff.file), /* loader handler class */
+            ImageKernel = new Media_Module.ImageKernel(Media_Module.mediaFileStuff.file), /* loader handler class */
             responsePromiseData,
             /* file source name */
             fileSourceName = Media_Module.mediaFileStuff.file.name,
@@ -98,7 +98,7 @@ Media.prototype.mediaLoad =  function () {
 
         /* if some file was passed */
         if (Media_Module.mediaFileStuff.file) {
-            ImageKernel.saveTo(Media_Module.savePath, function (fileLoaded) {
+            ImageKernel.uploadTo(Media_Module.savePath, function (fileLoaded) {
                 /* if file is load successfully */
                 if (fileLoaded) {
 

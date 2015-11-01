@@ -33407,7 +33407,7 @@ angular.module('terminal')
             })
 
             // route for the contact page
-            .when('/loader', {
+            .when('/media', {
                 templateUrl : '/viewPartials/terminal/mediaKernel.html',
                 controller  : 'terminalLoadMedia'
             })
@@ -33589,7 +33589,6 @@ angular.module('terminal')
 
 
             if (!UTIL.getCookie('isAuthorized')) { $location.path('/'); }
-
 
             $scope.isFileSelected = false;
 
