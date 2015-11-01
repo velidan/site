@@ -79,20 +79,6 @@ Article.prototype.articleGet = function () {
     var Module = this;
 
     return function* (next) {
-     /*   var db = Module.config.DB,
-            Model;
-        db.connect();
 
-        Model = db.getModel('users', {
-            login : String,
-            password : String,
-            role : String
-        });
-
-
-        Model.findOne({'login' : 'Velidan'},  function (err, user) {
-            console.log(user);
-            db.close();
-        });*/
     }
 };

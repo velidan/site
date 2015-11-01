@@ -32,6 +32,20 @@ DB.prototype.connect = function() {
 };
 
 /**
+ * get scheme
+ * @param schemeName {String} -> Name of scheme
+ * @param scheme {Object} -> Mongoose scheme config
+ * @returns {Scheme}
+ */
+DB.prototype.getScheme = function (schemeName, scheme) {
+    var Schema;
+
+    Schema = new mongoose.Schema(scheme);
+
+    return Schema;
+};
+
+/**
  * get model
  * @param schemeName {String} -> Name of scheme
  * @param scheme {Object} -> Mongoose scheme config
@@ -46,10 +60,23 @@ DB.prototype.getModel = function (schemeName, scheme) {
 
    return this.model;
 };
+
+DB.prototype.saveModel = function (model, callback) {
+    var DB_MODULE = this;
+    DB_MODULE.connect();
+    model.save(function (err, mediaModel) {
+        if (err) return console.error(err);
+        callback(mediaModel);
+
+        DB_MODULE.close();
+    });
+};
+
 /**
  * close connection
  */
 DB.prototype.close = function () {
+    console.log("db connection closed");
     this.dbConnection.close()
 };
 

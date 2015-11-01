@@ -17,7 +17,7 @@
                     then(function (response) {
                         console.log(response);
                     }, function (reject) {
-                        console.log('Не удалось создать статью');
+                        console.log('Р’РѕР·РЅРёРєР»Р° РѕС€РёР±РєР° РїСЂРё СЃРѕР·РґР°РЅРёРё СЃС‚Р°С‚СЊРё.');
                     })
             }
         }]);

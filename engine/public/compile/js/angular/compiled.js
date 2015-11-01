@@ -33410,9 +33410,144 @@ angular.module('terminal')
             .when('/media', {
                 templateUrl : '/viewPartials/terminal/mediaKernel.html',
                 controller  : 'terminalLoadMedia'
-            });
+            })
+            .otherwise({
+              redirectTo: '/'
+           });
     });
 
+(function (window) {
+    angular.module('terminal')
+        /* make ajax with some default config (like progress) */
+        .factory('$xhrFactory', function() {
+       /*     return function createXhr(method, url) {
+                return new window.XMLHttpRequest({mozSystem: true});
+            };*/
+
+
+            /*class XHR {
+
+                constructor() {
+                    this.xhr = new window.XMLHttpRequest({mozSystem: true});
+                }
+
+                open(method, url, async = true) {
+                    this.xhr.open(method, url, async);
+                }
+
+                onreadystatechange(actions = null) {
+                    if (actions) {
+                        this.xhr.onreadystatechange = actions;
+                    } else {
+                        this.xhr.onreadystatechange = function (aEvt) {
+                            if (this.xhr.readyState == 4) {
+                                if (this.xhr.status == 200)
+                                    console.log(this.xhr.responseText);
+                                else
+                                    console.log("Error loading page\n");
+                            }
+                        };
+                    }
+
+                }
+
+                onprogress(actions = null) {
+                    if (actions) {
+                        this.xhr.upload.onprogress = actions;
+                    } else {
+                        this.xhr.upload.onprogress = function(event) {
+                            var loadedPercent =  Math.round((event.loaded / event.total) * 100);
+
+                            console.log(" Загружено -  " + loadedPercent + "%");
+                        };
+                    }
+
+                };
+
+                send(data) {
+                    this.xhr.send(data);
+                }
+
+            }*/
+
+            /* main class */
+            function XHR() {
+                    this.xhr = new window.XMLHttpRequest({mozSystem: true});
+
+                /**
+                 * Usage with default config
+                 * @param method (String) -> post or get
+                 * @param url {String} -> url path to server handler
+                 * @param data {Object} -> data to send
+                 */
+                this.useDefaultConf = function (method, url, data) {
+                    this.open(method, url);
+                    this.onreadystatechange();
+                    this.onprogress();
+                    this.send(data);
+                };
+
+                /**
+                 * Open connection
+                 * @param method (String) -> post or get
+                 * @param url {String} -> url path to server handler
+                 * @param async {Boolean} -> sync or async send
+                 */
+                this.open = function(method, url, async) {
+                    async = async || true;
+                    this.xhr.open(method, url, async);
+                };
+
+                /**
+                 * Statechange handler
+                 * @param actions {Function} -> statechange function
+                 */
+                this.onreadystatechange = function(actions) {
+                    var XHR_Module = this;
+                    if (actions) {
+                        this.xhr.onreadystatechange = actions;
+                    } else {
+                        this.xhr.onreadystatechange = function (aEvt) {
+                            if (XHR_Module.xhr.readyState == 4) {
+                                if (XHR_Module.xhr.status == 200)
+                                    console.log(XHR_Module.xhr.responseText);
+                                else
+                                    console.log("Error loading page\n");
+                            }
+                        };
+                    }
+
+                };
+
+                /**
+                 * Progress handler
+                 * @param actions {Function} -> statechange function
+                 */
+                this.onprogress = function(actions) {
+                    if (actions) {
+                        this.xhr.upload.onprogress = actions;
+                    } else {
+                        this.xhr.upload.onprogress = function(event) {
+                            var loadedPercent =  Math.round((event.loaded / event.total) * 100);
+
+                            console.log(" Загружено -  " + loadedPercent + "%");
+                        };
+                    }
+
+                };
+
+                /**
+                 *  Send data to server
+                 * @param data {Object} -> data to send
+                 */
+                this.send = function(data) {
+                    this.xhr.send(data);
+                }
+            }
+
+            return  new XHR();
+        })
+}(window));
 (function (window) {
     angular.module('terminal')
         .controller('terminalCreateArticle',['$scope', '$http', function ($scope, $http) {
@@ -33432,30 +33567,48 @@ angular.module('terminal')
                     then(function (response) {
                         console.log(response);
                     }, function (reject) {
-                        console.log('�� ������� ������� ������');
+                        console.log('Возникла ошибка при создании статьи.');
                     })
             }
         }]);
 }(window));
 (function (window) {
     angular.module('terminal')
-        .controller('terminalLoadMedia', ['$scope', '$http', '$location', function ($scope, $http, $location) {
-            $scope.loadMedia = function () {
-                var file = $scope.file_1,
-                    formData = new FormData();
+        .controller('terminalLoadMedia', ['$scope'
+            ,'$http'
+            ,'$location'
+            ,'$xhrFactory'
 
+            ,function ($scope
+                ,$http
+                ,$location
+                ,$xhrFactory) {
+
+            var vm = this;
+            vm.fileData = {};
+
+
+            if (!UTIL.getCookie('isAuthorized')) { $location.path('/'); }
+
+
+            $scope.isFileSelected = false;
+
+                /**
+                 *
+                 * @param fileData {Object} -> file data like name, album etc
+                 */
+            $scope.loadMedia = function (fileData) {
+                var file = $scope.file_1,
+                    formData = new FormData(),
+                    xhr = $xhrFactory;
+
+                for (var key in fileData) {
+                    formData.append(key, fileData[key]);
+                }
 
                 formData.append('file', file);
 
-                $http.post('/terminal/mediaLoad', formData, {
-                    transformRequest: angular.identity,
-                    headers: {'Content-Type': undefined}
-                }).
-                    then(function (response) {
-                        console.log(response);
-                    }, function (reject) {
-                        console.log('Возникла ошибка при загрузке медиа - файла');
-                    })
+                xhr.useDefaultConf('POST', '/terminal/mediaLoad', formData);
             }
 
         }]);
@@ -33518,9 +33671,7 @@ angular.module('terminal')
 (function (window) {
     angular.module('terminal')
         .controller('terminalController', ['$scope','$http', '$location', function($scope, $http, $location) {
-            if (!UTIL.getCookie('isAuthorized')) {
-                $location.path('/');
-            }
+            if (!UTIL.getCookie('isAuthorized')) { $location.path('/'); }
         }]);
 
 
@@ -33532,12 +33683,28 @@ angular.module('terminal')
             return {
                 restrict: 'A',
                 link: function(scope, element, attrs) {
-                    var model = $parse(attrs.fileModel);
-                    var modelSetter = model.assign;
+                    var model = $parse(attrs.fileModel),
+                        modelSetter = model.assign;
 
                     element.bind('change', function(){
                         scope.$apply(function(){
                             modelSetter(scope, element[0].files[0]);
+                        });
+
+                    });
+                }
+            };
+        }]);
+}(window));
+(function (window) {
+    angular.module('terminal')
+        .directive('bindFile', [function () {
+            return {
+                restrict: 'A',
+                link: function ($scope, el, attrs) {
+                    el.bind('change', function (event) {
+                        $scope.$apply(function() {
+                            $scope.isFileSelected = true;
                         });
 
                     });

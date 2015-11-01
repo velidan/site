@@ -6,14 +6,19 @@
   "dependencies": {
     "app-root-path": "^1.0.0",
     "co-monk": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.4.1",
     "koa": "^1.0.0",
     "koa-better-body": "^1.0.17",
     "koa-jade": "^1.1.0",
     "koa-router": "^5.1.2",
     "koa-session": "^3.3.1",
     "koa-static": "^1.4.9",
+    "mongoose": "^4.1.8",
     "monk": "^1.0.1",
-    "nodemon": "^1.4.1"
+    "nodemon": "^1.4.1",
+    "q": "^1.4.1"
   },
   "devDependencies": {},
   "scripts": {

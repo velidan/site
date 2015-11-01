@@ -18,5 +18,8 @@ angular.module('terminal')
             .when('/media', {
                 templateUrl : '/viewPartials/terminal/mediaKernel.html',
                 controller  : 'terminalLoadMedia'
-            });
+            })
+            .otherwise({
+              redirectTo: '/'
+           });
     });
