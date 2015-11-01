@@ -4,16 +4,16 @@
 "use strict";
 var fs = require('fs');
 
-/* Image operator core Class */
+/* File Loader Class */
 'use strict';
-class ImageKernel {
+class Uploader {
 
     constructor(fileData) {
         this.fileData = fileData;
     }
 
-    saveTo(path, callback) {
-        var Module = this,
+    uploadTo(path, callback) {
+        var Uploader_module = this,
             is, /* input Stream */
             os; /* output Stream */
 
@@ -36,13 +36,12 @@ class ImageKernel {
                 iterable.next();
             }
 
-            /* core function that load loader file */
+            /* core function that load media file */
             function _load(callback) {
                var identifier = stat;
                  if (err) {
                  /* file no exists */
                       if (err.code === 'ENOENT') {
-                          console.log(path);
                       fs.mkdirSync(path);
                       identifier = true;
                      } else {
@@ -51,18 +50,16 @@ class ImageKernel {
                  }
 
                  if (identifier) {
-                     is = fs.createReadStream(Module.fileData.path);
-                     os = fs.createWriteStream(path + Module.fileData.name);
+                     is = fs.createReadStream(Uploader_module.fileData.path);
+                     os = fs.createWriteStream(path + Uploader_module.fileData.name);
 
                  /* Write new file and unlink old */
                  is.pipe(os);
                  is.on('end', function () {
-                     fs.unlink(Module.fileData.path);
+                     fs.unlink(Uploader_module.fileData.path);
                      callback(true);
                      });
                  }
-
-
 
 
             }
@@ -83,4 +80,4 @@ class ImageKernel {
 
 }
 
-module.exports = ImageKernel;
+module.exports = Uploader;
