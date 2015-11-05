@@ -5,8 +5,8 @@ var gulp = require('gulp'),
 	
 	
 gulp.task('styles', function() {
-  return gulp.src('./engine/public/css/*.css'
-                  ,'./engine/public/css/thirdparty/*.css')
+  return gulp.src(['./engine/public/css/*.css'
+                  ,'./engine/public/css/thirdparty/*.css'])
     //.pipe(minifycss())
 	.pipe(concat('compiled.css'))
     .pipe(gulp.dest('./engine/public/compile/css/'))
@@ -68,7 +68,13 @@ gulp.watch(['./engine/public/js/angular/vendor/angular.js'
 			 ], function(event){
 gulp.run('js_angular');
 });
+
+gulp.watch(['./engine/public/css/*.css'
+            ,'./engine/public/css/thirdparty/*.css'
+			 ], function(event){
+gulp.run('styles');
+});
  
 gulp.task('default', function() {  
-    gulp.run('js_thirdparty', 'js_utility', 'js_angular');
+    gulp.run('js_thirdparty', 'js_utility', 'js_angular', 'styles');
   });

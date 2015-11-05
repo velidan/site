@@ -27,16 +27,18 @@ function Terminal(config) {
 Terminal.prototype.routerChunk = function () {
     var Module = this;
 
-    return {
-        get : {
+    return [
+         {
+             method : 'get',
             url : '/terminal',
             middleware : Module.signIn()
         },
-        post : {
+         {
+             method : 'post',
             url : '/terminal/identify',
             middleware : Module.identify()
         }
-    }
+    ]
 };
 
 /**

@@ -17,7 +17,7 @@ angular.module('terminal')
             // route for the contact page
             .when('/media', {
                 templateUrl : '/viewPartials/terminal/mediaKernel.html',
-                controller  : 'terminalLoadMedia'
+                controller  : 'terminalMediaCenter'
             })
             .otherwise({
               redirectTo: '/'

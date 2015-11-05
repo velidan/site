@@ -41,12 +41,16 @@ function Media(config) {
 Media.prototype.routerChunk = function () {
     var Module = this;
 
-    return {
-        post : {
-            url : '/terminal/mediaLoad',
-            middleware : Module.mediaLoad()
-        }
-    }
+    return [
+                {
+                    method : 'post',
+                    url : '/terminal/mediaLoad',
+                    middleware : Module.mediaLoad()
+                }
+
+
+
+    ]
 };
 
 /**

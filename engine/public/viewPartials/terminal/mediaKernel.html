@@ -1,5 +1,5 @@
 <h2>Медиа - центр</h2>
-<form novalidate id="mediaForm" enctype="multipart/form-data" data-ng-controller="terminalLoadMedia">
+<form novalidate id="mediaForm" enctype="multipart/form-data">
     <div class="additionalOptions" ng-show="isFileSelected">
         <label >Вы можете ввести имя файла
             <input data-ng-model="fileData.name" name="fileName" type="text">
@@ -20,6 +20,13 @@
 
     <button data-ng-click="loadMedia(fileData)">Загрузить файл</button>
 </form>
+
+<div class="mediaGalleryBox" data-ng-controller="terminalMediaGalleryShow">
+    <div id="mediaGalleryInit" data-ng-click="showGallery()">MEDIA - GALLERY</div>
+
+    <div id="mediaGallery"></div>
+</div>
+
 
 
 

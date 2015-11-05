@@ -1,6 +1,6 @@
 (function (window) {
     angular.module('terminal')
-        .controller('terminalLoadMedia', ['$scope'
+        .controller('terminalMediaCenter', ['$scope'
             ,'$http'
             ,'$location'
             ,'$xhrFactory'

@@ -33409,7 +33409,7 @@ angular.module('terminal')
             // route for the contact page
             .when('/media', {
                 templateUrl : '/viewPartials/terminal/mediaKernel.html',
-                controller  : 'terminalLoadMedia'
+                controller  : 'terminalMediaCenter'
             })
             .otherwise({
               redirectTo: '/'
@@ -33574,7 +33574,7 @@ angular.module('terminal')
 }(window));
 (function (window) {
     angular.module('terminal')
-        .controller('terminalLoadMedia', ['$scope'
+        .controller('terminalMediaCenter', ['$scope'
             ,'$http'
             ,'$location'
             ,'$xhrFactory'
@@ -33609,6 +33609,25 @@ angular.module('terminal')
 
                 xhr.useDefaultConf('POST', '/terminal/mediaLoad', formData);
             }
+
+        }]);
+}(window));
+(function (window) {
+    angular.module('terminal')
+        .controller('terminalMediaGalleryShow', ['$scope'
+            ,'$http'
+            ,'$location'
+            ,'$xhrFactory'
+
+            ,function ($scope
+                ,$http
+                ,$location
+                ,$xhrFactory) {
+
+                var xhr = $xhrFactory;
+
+                xhr.useDefaultConf('POST', '/terminal/mediaShow');
+
 
         }]);
 }(window));

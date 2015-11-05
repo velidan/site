@@ -134,4 +134,15 @@ h2 {
     opacity:0;
 }
 
-
+#mediaGalleryInit {
+    display: inline-flex;
+    min-width: 60px;
+    min-height: 30px;
+    background: linear-gradient(to bottom, #208058 0% ,#10A25F 50%, #45D849 100%);
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 5px 12px;
+    margin-top: 20px;
+}

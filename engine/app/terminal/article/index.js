@@ -30,17 +30,18 @@ function Article(config) {
 Article.prototype.routerChunk = function () {
     var Module = this;
 
-    return {
-
-        get : {
+    return [
+         {
+             method : 'get',
             url : '/terminal/articleCreate',
             middleware : Module.articleCreate()
         },
-        post : {
+         {
+             method : 'post',
             url : '/terminal/articleSave',
             middleware : Module.articleSave()
         }
-    }
+    ]
 };
 
 
