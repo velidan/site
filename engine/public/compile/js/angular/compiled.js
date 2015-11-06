@@ -33626,7 +33626,11 @@ angular.module('terminal')
 
                 var xhr = $xhrFactory;
 
-                xhr.useDefaultConf('POST', '/terminal/mediaShow');
+                $scope.showGallery = function () {
+                    xhr.useDefaultConf('POST', '/terminal/mediaShow');
+                };
+
+
 
 
         }]);

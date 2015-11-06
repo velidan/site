@@ -22,6 +22,8 @@ var router = require('koa-router')(),
                     ,terminalMedia.routerChunk()];
 
 
+
+/* TODO вынести в отдельный модуль */
 class RouterCaller {
 
     constructor(routerInstance) {
