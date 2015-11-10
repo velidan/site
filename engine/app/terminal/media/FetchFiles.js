@@ -21,6 +21,7 @@ class FetchFiles {
             Media_Module.db.connect();
 
             Media_Module.mediaModelScheme.find({}, {"_id" : 0, "date" : 0, "__v" : 0} ,(err, files) => {
+                Media_Module.db.close();
                 if (err) {
                     deferred.resolve({status : 503 });
                     return console.error(err);
@@ -29,10 +30,11 @@ class FetchFiles {
                 deferred.resolve({status : 200, body : files});
             });
 
-            
+
              responseData = yield deferred.promise;
              ctx.status = responseData.status;
              ctx.body = responseData.body;
+
 
         };
 
