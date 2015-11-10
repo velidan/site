@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Created by Cronix-23-ZTan on 29.08.2015.
  */
@@ -22,6 +23,7 @@ module.exports = function (config) {
 class Media extends FetchFiles {
 
     constructor(config) {
+        
         super();
 
         this.db = GLOBALSTUFF.DB;
@@ -32,18 +34,12 @@ class Media extends FetchFiles {
         /* require loader core class */
         this.ImageKernel = require(GLOBALSTUFF.rootAppPath + '/utility/image/ImageKernel');
 
-        /* nested scheme */
-        this.mediaDetailScheme = this.db.getScheme('detail', {
-            album : String,
-            category: String,
-            type : String
-        });
             /* primary scheme */
         this.mediaModelScheme = this.db.getModel('media', {
                 name : String,
                 sourceName : String,
                 altText : String,
-                detail : Array,
+                detail : {album : String, category : String, fileType : String},
                 date : Date
             });
 
@@ -122,9 +118,9 @@ class Media extends FetchFiles {
                         name : fileName,
                         sourceName : fileSourceName,
                         altText : Media_Module.mediaFileStuff.fileData.description,
-                        detail : [{album : Media_Module.mediaFileStuff.fileData.album
+                        detail : {album : Media_Module.mediaFileStuff.fileData.album
                             ,category : Media_Module.mediaFileStuff.fileData.category
-                            ,type : fileType}],
+                            ,fileType : fileType},
                         date : Date.now()
                     });
 

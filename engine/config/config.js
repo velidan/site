@@ -6,9 +6,10 @@ var nodePath = require('path'),
     UTILITY = require(rootAppPath +  '/utility/Utility'),
 
     config = {
+    Q : require('q'),  /* Q library for async generators */
     DB : DB_Instance,
-    rootAppPath : rootAppPath,
-    UTILITY : UTILITY
+    rootAppPath : rootAppPath, /* path to app root */
+    UTILITY : UTILITY /* some useful stuff */
 };
 
 module.exports = config;

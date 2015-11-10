@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Created by Cronix-23-ZTan on 06.11.2015.
  */
@@ -8,41 +9,34 @@ class FetchFiles {
 
     }
 
+    /* Get all files from Media collection */
     fetchAllFiles() {
         var Media_Module = this;
 
         return function* (next) {
+            var ctx = this, /* koa context */
+                deferred = GLOBALSTUFF.Q.defer(), /* create deferred promise */
+                responseData;
 
-      /*     var mediaCollection =  Media_Module.db.getModel('media', {
-                           name : String,
-                           sourceName : String,
-                           altText : String,
-                           detail : Array,
-                           date : Date
-                       });
-
-            var a = mediaCollection.find({});
-            a.then(function(files) {
-                console.log(files);
-            });*/
-
-
-            var mongoose = require('mongoose');
             Media_Module.db.connect();
-            var mediaSchema = mongoose.Schema({
-                name : String,
-                sourceName : String,
-                altText : String,
-                detail : Array,
-                date : Date
+
+            Media_Module.mediaModelScheme.find({}, {"_id" : 0, "date" : 0, "__v" : 0} ,(err, files) => {
+                if (err) {
+                    deferred.resolve({status : 503 });
+                    return console.error(err);
+                }
+                /* resolve promise */
+                deferred.resolve({status : 200, body : files});
             });
 
-            var Media = mongoose.model('Media', mediaSchema);
-            Media.find(function (err, files) {
-                if (err) return console.error(err);
-                console.log(files);
-            })
-        }
+            
+             responseData = yield deferred.promise;
+             ctx.status = responseData.status;
+             ctx.body = responseData.body;
+
+        };
+
+
 
 
     }

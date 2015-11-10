@@ -8,7 +8,7 @@ var app  = module.exports =  require('koa')(),
     Jade = require('koa-jade'),
     session = require('koa-session'),
     router,
-
+ 
     jadeInstance = new Jade({
     viewPath: templateRoot,
     debug: false,

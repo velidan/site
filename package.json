@@ -21,7 +21,7 @@
     "q": "^1.4.1"
   },
   "devDependencies": {},
-  "scripts": {
+  "scripts": {"start": "node engine\/server\/index.js --harmony",
     "test": "none"
   },
   "repository": {
