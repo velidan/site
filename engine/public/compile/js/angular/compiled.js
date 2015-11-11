@@ -33385,7 +33385,9 @@ angular.module('ngAnimate', [])
     angular.module('terminal', [
         'ngRoute',
         'ngAnimate'
-    ]);
+    ]).constant('config', {
+        mediaPath : '/media'
+    })
 
 
 }(window));
@@ -33420,55 +33422,7 @@ angular.module('terminal')
     angular.module('terminal')
         /* make ajax with some default config (like progress) */
         .factory('$xhrFactory', function() {
-       /*     return function createXhr(method, url) {
-                return new window.XMLHttpRequest({mozSystem: true});
-            };*/
 
-
-            /*class XHR {
-
-                constructor() {
-                    this.xhr = new window.XMLHttpRequest({mozSystem: true});
-                }
-
-                open(method, url, async = true) {
-                    this.xhr.open(method, url, async);
-                }
-
-                onreadystatechange(actions = null) {
-                    if (actions) {
-                        this.xhr.onreadystatechange = actions;
-                    } else {
-                        this.xhr.onreadystatechange = function (aEvt) {
-                            if (this.xhr.readyState == 4) {
-                                if (this.xhr.status == 200)
-                                    console.log(this.xhr.responseText);
-                                else
-                                    console.log("Error loading page\n");
-                            }
-                        };
-                    }
-
-                }
-
-                onprogress(actions = null) {
-                    if (actions) {
-                        this.xhr.upload.onprogress = actions;
-                    } else {
-                        this.xhr.upload.onprogress = function(event) {
-                            var loadedPercent =  Math.round((event.loaded / event.total) * 100);
-
-                            console.log(" Загружено -  " + loadedPercent + "%");
-                        };
-                    }
-
-                };
-
-                send(data) {
-                    this.xhr.send(data);
-                }
-
-            }*/
 
             /* main class */
             function XHR() {
@@ -33618,17 +33572,53 @@ angular.module('terminal')
             ,'$http'
             ,'$location'
             ,'$xhrFactory'
+            ,'config'
 
             ,function ($scope
                 ,$http
                 ,$location
-                ,$xhrFactory) {
+                ,$xhrFactory
+                ,config) {
 
                 var xhr = $xhrFactory;
 
                 $scope.showGallery = function () {
-                    xhr.useDefaultConf('POST', '/terminal/mediaShow');
-                };
+
+
+                    var promise = new Promise (function (resolve, reject) {
+
+                        xhr.open('POST', '/terminal/mediaShow');
+
+                        xhr.onreadystatechange(function () {
+                            if (this.readyState == 4) {
+                                if (this.status == 200) {
+                                    resolve(this.responseText);
+                                } else
+                                    reject("Error loading page\n");
+                            }
+                        });
+
+                        xhr.send();
+                    });
+
+
+
+                    promise.then(function (response) {
+                        var filesData = JSON.parse(response);
+
+                        filesData.forEach(function (fileObject) {
+                            $( "<img src='" + config.mediaPath + '/img/' + fileObject.sourceName +"' alt='"+ fileObject.name +"'>").appendTo( "body" );
+                        });
+
+
+
+                        console.log(config)
+                    }, function(error) {
+                        console.log("Failed: " + error);
+                    })
+
+
+                };  /* !Show gallery */
 
 
 

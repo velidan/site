@@ -33,7 +33,8 @@ class FetchFiles {
 
              responseData = yield deferred.promise;
              ctx.status = responseData.status;
-             ctx.body = responseData.body;
+             console.log(typeof responseData.body);
+             ctx.body = JSON.stringify(responseData.body);
 
 
         };
