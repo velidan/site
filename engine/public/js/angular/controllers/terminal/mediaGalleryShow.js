@@ -3,51 +3,35 @@
         .controller('terminalMediaGalleryShow', ['$scope'
             ,'$http'
             ,'$location'
-            ,'$xhrFactory'
+            ,'mediaGalleryPopUp'
             ,'config'
 
             ,function ($scope
                 ,$http
                 ,$location
-                ,$xhrFactory
+                ,mediaGalleryPopUp
                 ,config) {
 
-                var xhr = $xhrFactory;
 
                 $scope.showGallery = function () {
 
+                    $http({
+                       method : 'POST',
+                       url : '/terminal/mediaShow'
+                    }).then(function (response){
 
-                    var promise = new Promise (function (resolve, reject) {
-
-                        xhr.open('POST', '/terminal/mediaShow');
-
-                        xhr.onreadystatechange(function () {
-                            if (this.readyState == 4) {
-                                if (this.status == 200) {
-                                    resolve(this.responseText);
-                                } else
-                                    reject("Error loading page\n");
-                            }
+                        response.data  .forEach(function (fileObject) {
+                            //$( "<img src='" + config.mediaPath + '/img/' + fileObject.sourceName +"' alt='"+ fileObject.name +"'>").appendTo( "body" );
+                            new mediaGalleryPopUp(fileObject);
                         });
 
-                        xhr.send();
+
+                        console.log(response);
+                    }, function (error) {
+                        console.log('ERROR TO GET FILES :' + error);
                     });
 
 
-
-                    promise.then(function (response) {
-                        var filesData = JSON.parse(response);
-
-                        filesData.forEach(function (fileObject) {
-                            $( "<img src='" + config.mediaPath + '/img/' + fileObject.sourceName +"' alt='"+ fileObject.name +"'>").appendTo( "body" );
-                        });
-
-
-
-                        console.log(config)
-                    }, function(error) {
-                        console.log("Failed: " + error);
-                    })
 
 
                 };  /* !Show gallery */
