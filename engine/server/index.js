@@ -39,7 +39,7 @@ app
     .use(router.allowedMethods());
 
 
-app.use(function *() {
+app.use(function* () {
 
    this.status = 404;
    // yield this.render('service/404');
@@ -52,4 +52,4 @@ app.use(function *() {
 
 
 app.listen(80);
-console.log('Сервер запустился. Порт - 80');
+console.log('Server start on port - 80');

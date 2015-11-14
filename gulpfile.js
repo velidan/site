@@ -48,14 +48,12 @@ gulp.task('js_angular', function() {
 // Отслеживаем изменения в файлах
 gulp.watch(['./engine/public/js/thirdparty/jquery-2.1.4.js'
 			  ,'./engine/public/js/thirdparty/bootstrap.js',
-			 ], function(event){
-gulp.run('js_thirdparty');
-});
+			 ], ['js_thirdparty']
+);
   
 gulp.watch(['./engine/public/js/utility/*.js'
-			 ], function(event){
-gulp.run('js_utility');
-});
+			 ], ['js_utility']
+);
 			 
 gulp.watch(['./engine/public/js/angular/vendor/angular.js'
 			  ,'./engine/public/js/angular/vendor/angular-route.js'
@@ -65,15 +63,13 @@ gulp.watch(['./engine/public/js/angular/vendor/angular.js'
 			  ,'./engine/public/js/angular/controllers/**/*.js'
 			  ,'./engine/public/js/angular/directives/*.js'
 			  ,'./engine/public/js/angular/services/*.js'
-			 ], function(event){
-gulp.run('js_angular');
-});
+			 ], ['js_angular']
+);
 
 gulp.watch(['./engine/public/css/*.css'
             ,'./engine/public/css/thirdparty/*.css'
-			 ], function(event){
-gulp.run('styles');
-});
+			 ], ['styles']
+);
  
 gulp.task('default', function() {  
     gulp.run('js_thirdparty', 'js_utility', 'js_angular', 'styles');

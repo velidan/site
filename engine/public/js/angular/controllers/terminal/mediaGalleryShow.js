@@ -14,15 +14,17 @@
 
 
                 $scope.showGallery = function () {
+                    var mediaShowStructure =  mediaGalleryPopUp.createStructure();
 
                     $http({
                        method : 'POST',
                        url : '/terminal/mediaShow'
                     }).then(function (response){
 
-                        response.data  .forEach(function (fileObject) {
-                            //$( "<img src='" + config.mediaPath + '/img/' + fileObject.sourceName +"' alt='"+ fileObject.name +"'>").appendTo( "body" );
-                            new mediaGalleryPopUp(fileObject);
+                        response.data.forEach(function (fileObject) {
+                            mediaGalleryPopUp.buildItem(fileObject).insert();
+
+
                         });
 
 
