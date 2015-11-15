@@ -1,11 +1,15 @@
 (function(window){
+	"use strict";
+	function clearSignInStyle() {
+		$('html').removeClass('signIn');
+	}
 
 	angular.module('terminal')
 		.controller('signUpController', ['$scope','$http', '$location', function($scope, $http, $location) {
 
-
 		if (UTIL.getCookie('isAuthorized')) {
 			var path = $location.path();
+			clearSignInStyle();
 			if (path === "/") {
 				$location.path('/panel');
 			} else {
@@ -42,6 +46,7 @@
 				console.log('Пользователь не найден');
 				break;
 			case 1 :
+				clearSignInStyle();
 				$location.path('/panel');
 				break;
 			case 2 :

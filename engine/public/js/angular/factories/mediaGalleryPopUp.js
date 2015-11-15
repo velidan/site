@@ -22,7 +22,7 @@
 
 
                 /** TODO
-                 * Make handler to different file type ()video\audio etc)
+                 * Make handler to different file type (video\audio etc)
                  * @param fileDataObject {Object} -> file data
                  * @returns {{isert: insert}}
                  */
@@ -39,6 +39,7 @@
                     /* create property block and insert into itemBox */
                     mediaShow_Plugin.makePropertyBox(fileDataObject)
                         .appendTo(mediaShow_Plugin.itemBox);
+
 
                     return {
                         /* Insert item to popup */
@@ -74,7 +75,7 @@
 
                         propertyRow.appendTo(propertyBox);
                     }
-                    
+
                 };
 
 

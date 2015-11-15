@@ -1,25 +1,29 @@
 angular.module('terminal')
-    .config(function($routeProvider) {
-        $routeProvider
+    .config(function($routeSegmentProvider, $routeProvider) {
+        $routeSegmentProvider.options.autoLoadTemplates = true;
+        $routeSegmentProvider
 
             // route for the home page
-            .when('/', {
-                templateUrl : '/viewPartials/terminal/signUp.html',
-                controller  : 'signUpController'
-            })
+            .when('/', 'login')
+                .segment('login', {
+                    templateUrl : '/viewPartials/terminal/signUp.html',
+                    controller  : 'signUpController'
+                })
 
             // route for the about page
-            .when('/panel', {
-                templateUrl : '/viewPartials/terminal/terminal.html',
-                controller  : 'terminalController'
-            })
+            .when('/panel', 'main')
+                  .segment('main',{
+                    templateUrl : '/viewPartials/terminal/terminal.html',
+                    controller  : 'terminalController'
+                  })
 
             // route for the contact page
-            .when('/media', {
-                templateUrl : '/viewPartials/terminal/mediaKernel.html',
-                controller  : 'terminalMediaCenter'
-            })
-            .otherwise({
-              redirectTo: '/'
-           });
+            .when('/media', 'media')
+                .segment('media',  {
+                    templateUrl : '/viewPartials/terminal/mediaKernel.html',
+                    controller  : 'terminalMediaCenter'
+                });
+
+
+        $routeProvider.otherwise({redirectTo: '/'});
     });

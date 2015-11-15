@@ -14,7 +14,7 @@
 
 
                 $scope.showGallery = function () {
-                    var mediaShowStructure =  mediaGalleryPopUp.createStructure();
+                    mediaGalleryPopUp.createStructure();
 
                     $http({
                        method : 'POST',

@@ -1,14 +1,48 @@
+<!--
 <h1>Запрашивается идентификация</h1>
 
-    <form method="post" enctype="multipart/form-data" id="loginForm">
+    <form >
         <label>Логин</label>
         <input type="text" name="login" placeholder="Логин" data-ng-model="user.name">
         <label>Пароль</label>
-        <input type="password" name="password" placeholder="Пароль" data-ng-model="user.password">
+        <input type="password" name="password" placeholder="Пароль" >
         <button data-ng-click="identify(user)">Идентификация</button>
     </form>
+-->
 
-<a href="/">На главную</a>
+
+<a class="hiddenanchor" id="toregister"></a>
+<a class="hiddenanchor" id="tologin"></a>
+
+<div id="wrapper">
+    <div id="login" class="animate form">
+        <section class="login_content">
+            <form method="post" enctype="multipart/form-data" id="loginForm">
+                <h1>Идентификация</h1>
+                <div>
+                    <input type="text" class="form-control" placeholder="Логин" required="" data-ng-model="user.name" />
+                </div>
+                <div>
+                    <input type="password" class="form-control" placeholder="Пароль" required="" data-ng-model="user.password" />
+                </div>
+                <div>
+                    <button class="btn btn-default submit" data-ng-click="identify(user)">Получить доступ</button>
+                </div>
+                <div class="clearfix"></div>
+                <div class="separator">
+                    <br />
+                    <div>
+                        <h1><i class="fa fa-cog fa-spin" style="font-size: 26px;"></i> Wellnine!</h1>
+
+                        <p>©2016 Все права защищены. Терминал входа на сайт. Охраняется парящим стражем</p>
+                    </div>
+                </div>
+            </form>
+            <!-- form -->
+        </section>
+        <!-- content -->
+    </div>
+</div>
 
 
 
