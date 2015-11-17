@@ -13,7 +13,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('./engine/public/compile/css/'))
 });
 	
-	
+	/*
 gulp.task('js_thirdparty', function() {
   return gulp.src(['./engine/public/js/thirdparty/jquery-2.1.4.js'
 ])
@@ -21,13 +21,12 @@ gulp.task('js_thirdparty', function() {
     .pipe(concat('compiled.js'))
     .pipe(gulp.dest('./engine/public/compile/js/thirdparty/'));
 });
-
+*/
 gulp.task('js_thirdpartyFooter', function() {
-  return gulp.src(['./engine/public/js/thirdparty/bootstrap.js'
-  			      ,'./engine/public/js/thirdparty/bootstrap-progressbar.min.js'
-				  ,'./engine/public/js/thirdparty/jquery.nicescroll.min.js'
-				  ,'./engine/public/js/thirdparty/icheck.min.js'
-				  ,'./engine/public/js/thirdparty/custom.js'
+  return gulp.src(['./engine/public/js/thirdparty/jquery-2.1.4.js'
+                   ,'./engine/public/js/thirdparty/bootstrap.js'
+                   ,'./engine/public/js/thirdparty/terminal.js'
+				 
 ])
 	.pipe(uglify())
     .pipe(concat('compiledFooter.js'))
@@ -87,5 +86,5 @@ gulp.watch(['./engine/public/css/*.css'
 );
  
 gulp.task('default', function() {  
-    gulp.run('js_thirdparty', 'js_thirdpartyFooter', 'js_utility', 'js_angular', 'styles');
+    gulp.run('js_thirdpartyFooter', 'js_utility', 'js_angular', 'styles');
   });

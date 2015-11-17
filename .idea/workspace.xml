@@ -2,51 +2,123 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21914d1d-0268-4c9f-8c10-a31277af4b49" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/bootstrap/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/fonts/css/font-awesome.min.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/engine/public/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/calendar/fullcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/calendar/fullcalendar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/calendar/fullcalendar.print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/colorpicker/alpha-horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/colorpicker/alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/colorpicker/bootstrap-colorpicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/colorpicker/hue-horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/colorpicker/hue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/colorpicker/saturation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/css/demo_page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/css/demo_table.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/css/demo_table_jui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/css/jquery.dataTables.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/css/jquery.dataTables_themeroller.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/Sorting icons.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/back_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/back_enabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/back_enabled_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/forward_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/forward_enabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/forward_enabled_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/sort_asc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/sort_asc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/sort_both.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/sort_desc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/images/sort_desc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/datatables/tools/css/dataTables.tableTools.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/editor/external/google-code-prettify/prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/editor/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/floatexamples.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/flat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/flat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/flat@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/icheck/flat/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/ion.rangeSlider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/ion.rangeSlider.skinFlat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/maps/jquery-jvectormap-2.0.1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/nprogress.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/progressbar/bootstrap-progressbar-3.3.0.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/select/select2.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/layout/switchery/switchery.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/flat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/flat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/flat@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/css/thirdparty/layout/icheck/flat/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/js/thirdparty/bootstrap-progressbar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/js/thirdparty/custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/js/thirdparty/icheck.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/public/js/thirdparty/jquery.nicescroll.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/compile/css/compiled.css" afterPath="$PROJECT_DIR$/engine/public/compile/css/compiled.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/compile/js/angular/compiled.js" afterPath="$PROJECT_DIR$/engine/public/compile/js/angular/compiled.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/compile/js/thirdparty/compiled.js" afterPath="$PROJECT_DIR$/engine/public/compile/js/thirdparty/compiled.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/compile/js/utility/compiled.js" afterPath="$PROJECT_DIR$/engine/public/compile/js/utility/compiled.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/css/layout/bootstrap.min.css" afterPath="$PROJECT_DIR$/engine/public/css/layout/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/css/style.css" afterPath="$PROJECT_DIR$/engine/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/css/terminal.css" afterPath="$PROJECT_DIR$/engine/public/css/terminal.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/css/font-awesome.css" afterPath="$PROJECT_DIR$/engine/public/fonts/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/engine/public/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/bordered-pulled.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/core.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/font-awesome.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/font-awesome.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/icons.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/icons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/mixins.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/path.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/path.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/less/variables.less" afterPath="$PROJECT_DIR$/engine/public/fonts/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/_bordered-pulled.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/_core.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/_core.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/_icons.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/_mixins.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/_path.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/_path.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/_variables.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/fonts/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/engine/public/fonts/scss/font-awesome.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/js/angular/app.js" afterPath="$PROJECT_DIR$/engine/public/js/angular/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/mediaGalleryShow.js" afterPath="$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/mediaGalleryShow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js" afterPath="$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/js/angular/factories/mediaGalleryPopUp.js" afterPath="$PROJECT_DIR$/engine/public/js/angular/factories/mediaGalleryPopUp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/js/angular/routes/route.js" afterPath="$PROJECT_DIR$/engine/public/js/angular/routes/route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/viewPartials/terminal/signUp.html" afterPath="$PROJECT_DIR$/engine/public/viewPartials/terminal/signUp.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html" afterPath="$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/template/layouts/mainTerminalLayout.jade" afterPath="$PROJECT_DIR$/engine/template/layouts/mainTerminalLayout.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
@@ -69,14 +141,14 @@
     <favorites_list name="Wellnine" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48208642">
+    <splitter split-orientation="horizontal" split-proportion="0.4947313">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="terminal.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/engine/public/css/terminal.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-13.076923">
-                  <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="266" column="14" selection-start-line="266" selection-start-column="14" selection-end-line="266" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -135,7 +207,7 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/engine/public/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.811321">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
                   <folding />
                 </state>
@@ -166,11 +238,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="signUp.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="signUp.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.028475711">
-                  <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -180,7 +252,7 @@
             <entry file="file://$PROJECT_DIR$/engine/template/layouts/mainTerminalLayout.jade">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                  <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
@@ -189,7 +261,7 @@
           <file leaf-file-name="signUp.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/signUp.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="7.730769">
+                <state vertical-scroll-proportion="-0.65384614">
                   <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
                   <folding>
                     <element signature="n#style#0;n#i#0;n#h1#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -198,20 +270,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="terminal.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="terminal.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-18.423077">
-                  <caret line="276" column="30" selection-start-line="276" selection-start-column="30" selection-end-line="276" selection-end-column="30" />
+                <state vertical-scroll-proportion="0.5167224">
+                  <caret line="200" column="58" selection-start-line="200" selection-start-column="58" selection-end-line="200" selection-end-column="58" />
                   <folding>
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#4;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -278,9 +344,9 @@
         <option value="$PROJECT_DIR$/engine/public/css/thirdparty/bootstrap.css.map" />
         <option value="$PROJECT_DIR$/engine/public/css/layout/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/engine/public/compile/css/compiled.css" />
+        <option value="$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js" />
         <option value="$PROJECT_DIR$/engine/template/layouts/mainTerminalLayout.jade" />
         <option value="$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html" />
-        <option value="$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js" />
       </list>
     </option>
   </component>
@@ -775,7 +841,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="JavaScriptLanguageLevel" value="ES6" />
@@ -866,14 +931,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17860906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2936078" sideWeight="0.5052687" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2936078" sideWeight="0.4947313" order="2" side_tool="false" content_ui="tabs" />
@@ -887,6 +951,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -936,6 +1001,17 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/engine/config/route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1124,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.02724359">
           <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,7 +1236,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,7 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3645485">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,7 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21024735">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,14 +1257,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21024735">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/public/css/terminal.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="14" selection-start-line="266" selection-start-column="14" selection-end-line="266" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1204,7 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1173763">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,13 +1279,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07597765">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.811321">
+        <state vertical-scroll-proportion="0.0">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
           <folding />
         </state>
@@ -1252,69 +1318,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.240964">
           <caret line="266" column="295" selection-start-line="266" selection-start-column="295" selection-end-line="266" selection-end-column="295" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/public/css/thirdparty/bootstrap.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="56.88489">
           <caret line="0" column="59551" selection-start-line="0" selection-start-column="59551" selection-end-line="0" selection-end-column="59551" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/public/compile/css/compiled.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30241188">
           <caret line="918" column="38" selection-start-line="918" selection-start-column="38" selection-end-line="918" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/public/css/layout/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8727272">
-          <caret line="9" column="3464" selection-start-line="9" selection-start-column="3464" selection-end-line="9" selection-end-column="3464" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/template/layouts/mainTerminalLayout.jade">
+    <entry file="file://$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/signUp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.730769">
-          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#h1#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.423077">
-          <caret line="276" column="30" selection-start-line="276" selection-start-column="30" selection-end-line="276" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#3;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#4;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1326,11 +1354,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/public/js/angular/controllers/terminal/signUp.js">
+    <entry file="file://$PROJECT_DIR$/engine/template/layouts/mainTerminalLayout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028475711">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/signUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h1#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/public/viewPartials/terminal/terminal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5167224">
+          <caret line="200" column="58" selection-start-line="200" selection-start-column="58" selection-end-line="200" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

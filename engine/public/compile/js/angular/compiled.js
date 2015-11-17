@@ -34470,7 +34470,7 @@ angular.module('terminal')
 
                 }, function (reject) {
                     console.log('Возникла ошибка при идентификации');
-                })
+                });
 
         };
 
