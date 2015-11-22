@@ -38,7 +38,7 @@ Terminal.prototype.routerChunk = function () {
             url : '/terminal/identify',
             middleware : Module.identify()
         }
-    ]
+    ];
 };
 
 /**
@@ -59,6 +59,7 @@ Terminal.prototype.identify = function () {
 
         if (userInfo.authStatus === 1) {
             //  this.request.header.cookies.set('Cookie', a);
+
             this.set('Set-Cookie', 'isAuthorized = true; path = /');
 
         }
