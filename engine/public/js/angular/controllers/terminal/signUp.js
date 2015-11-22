@@ -5,41 +5,34 @@
 	}
 
 	angular.module('terminal')
-		.controller('signUpController', ['$scope','$http', '$location', function($scope, $http, $location) {
+		.controller('signUpController', ['$scope'
+			, 'authorizationService'
+			, function($scope
+					,authorizationService) {
 
-		if (UTIL.getCookie('isAuthorized')) {
-			var path = $location.path();
-			clearSignInStyle();
-			if (path === "/") {
-				$location.path('/panel');
-			} else {
-				$location.path($location.path());
-			}
 
-		}
+				$scope.isAuthorized = UTIL.getCookie('isAuthorized') || false;
+				console.log($scope);
 
-        $scope.userData = {};
+
 
 		$scope.identify = function (user){
-            $scope.userData = angular.copy(user);
-
-            $http.post('/terminal/identify', $scope.userData).
-                then(function (response) {
-                    var userInfoObj = response.data,
-						userData = userInfoObj.userData;
+            var userData = angular.copy(user);
 
 
-					operateAuthStatus.call($scope, userInfoObj.authStatus, $location);
-
-                }, function (reject) {
-                    console.log('Возникла ошибка при идентификации');
-                });
+			authorizationService.launch(userData).then(
+					success => {
+						operateAuthStatus($scope, success)
+					},
+					error => {console.log(error)}
+			);
 
         };
 
 	}]);
 
-	function operateAuthStatus(authStatus, $location) {
+
+	function operateAuthStatus($scope, authStatus) {
 
 		switch (authStatus) {
 			case 0 :
@@ -47,13 +40,14 @@
 				break;
 			case 1 :
 				clearSignInStyle();
-				$location.path('/panel');
+				$scope.isAuthorized = true;
+				$scope.$apply();
+				/*				$location.path('/panel');*/
 				break;
 			case 2 :
 				console.log('Неверный пароль');
 				break;
 		}
 	}
-
 }(window));
 
