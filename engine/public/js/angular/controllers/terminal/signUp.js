@@ -1,8 +1,5 @@
 (function(window){
 	"use strict";
-	function clearSignInStyle() {
-		$('html').removeClass('signIn');
-	}
 
 	angular.module('terminal')
 		.controller('signUpController', ['$scope'
@@ -10,15 +7,17 @@
 			, function($scope
 					,authorizationService) {
 
+		var authCookie = UTIL.getCookie('isAuthorized') || false;
+		$scope.isAuthorized = authCookie;
 
-				$scope.isAuthorized = UTIL.getCookie('isAuthorized') || false;
-				console.log($scope);
+		/* defence from hack attack from outside */
+		$scope.$watch('isAuthorized', function() {
+			if (!authCookie) {$scope.isAuthorized = false; }
+		});
 
-
-
+		/* Auth request to server */
 		$scope.identify = function (user){
             var userData = angular.copy(user);
-
 
 			authorizationService.launch(userData).then(
 					success => {
@@ -31,21 +30,23 @@
 
 	}]);
 
-
+	/* Handle server auth response */
 	function operateAuthStatus($scope, authStatus) {
 
 		switch (authStatus) {
 			case 0 :
 				console.log('Пользователь не найден');
+
 				break;
 			case 1 :
-				clearSignInStyle();
+				UTIL.clearHTMLSignInIdentif();
 				$scope.isAuthorized = true;
 				$scope.$apply();
-				/*				$location.path('/panel');*/
+
 				break;
 			case 2 :
 				console.log('Неверный пароль');
+
 				break;
 		}
 	}

@@ -33389,7 +33389,22 @@ angular.module('ngAnimate', [])
         'view-segment'
     ]).constant('config', {
         mediaPath : '/media'
-    });
+    }).run(['$rootScope', '$location', function($rootScope, $location){
+        /* before fire app we check if we are authorized. If not - prevent
+         * template loading and redirect to auth form */
+        $rootScope.$on("$routeChangeStart", function(event, next, current) {
+
+            var isAuthorized = UTIL.getCookie('isAuthorized') || false;
+
+            if (next.originalPath !== '/' && !isAuthorized) {
+                event.preventDefault();
+                $location.url('/');
+            } else {
+                UTIL.clearHTMLSignInIdentif();
+            }
+
+        });
+    }]);
 
 
 }(window));
@@ -35626,9 +35641,6 @@ angular.module('terminal')
 }(window));
 (function(window){
 	"use strict";
-	function clearSignInStyle() {
-		$('html').removeClass('signIn');
-	}
 
 	angular.module('terminal')
 		.controller('signUpController', ['$scope'
@@ -35636,15 +35648,17 @@ angular.module('terminal')
 			, function($scope
 					,authorizationService) {
 
+		var authCookie = UTIL.getCookie('isAuthorized') || false;
+		$scope.isAuthorized = authCookie;
 
-				$scope.isAuthorized = UTIL.getCookie('isAuthorized') || false;
-				console.log($scope);
+		/* defence from hack attack from outside */
+		$scope.$watch('isAuthorized', function() {
+			if (!authCookie) {$scope.isAuthorized = false; }
+		});
 
-
-
+		/* Auth request to server */
 		$scope.identify = function (user){
             var userData = angular.copy(user);
-
 
 			authorizationService.launch(userData).then(
 					success => {
@@ -35657,21 +35671,23 @@ angular.module('terminal')
 
 	}]);
 
-
+	/* Handle server auth response */
 	function operateAuthStatus($scope, authStatus) {
 
 		switch (authStatus) {
 			case 0 :
 				console.log('Пользователь не найден');
+
 				break;
 			case 1 :
-				clearSignInStyle();
+				UTIL.clearHTMLSignInIdentif();
 				$scope.isAuthorized = true;
 				$scope.$apply();
-				/*				$location.path('/panel');*/
+
 				break;
 			case 2 :
 				console.log('Неверный пароль');
+
 				break;
 		}
 	}
