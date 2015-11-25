@@ -34,7 +34,20 @@
 
 
             return {
-                launch : initialize
+                launch : initialize,
+                checkAuthStatus: function ($scope) {
+
+                    $scope.isAuthorized = UTIL.getCookie('isAuthorized') || false;
+
+                    /* defence from hack attack from outside */
+                    $scope.$watch('isAuthorized', function() {
+                        /* we must check cookie because it was created when success auth */
+                        if (!UTIL.getCookie('isAuthorized')) {$scope.isAuthorized = false; }
+                    });
+
+
+
+                }
             };
 
         }]);
