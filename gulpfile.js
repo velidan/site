@@ -50,6 +50,7 @@ gulp.task('js_angular', function() {
 				  ,'./engine/public/js/angular/app.js'
 				  ,'./engine/public/js/angular/services/*.js'
 				  ,'./engine/public/js/angular/routes/*.js'
+				  ,'./engine/public/js/angular/modules/**/**/**/**/*/*.js'
 				  ,'./engine/public/js/angular/controllers/**/*.js'
 				  ,'./engine/public/js/angular/factories/*.js'
 				  ,'./engine/public/js/angular/directives/*.js'

@@ -6,8 +6,8 @@ angular.module('terminal')
         // route for the home page
             .when('/', 'login')
             .segment('login', {
-                templateUrl : '/viewPartials/terminal/signUp.html',
-                controller  : 'signUpController'
+                templateUrl : '/viewPartials/terminal/index.html',
+                controller  : 'mainTerminalController'
             })
 
             // route for the about page

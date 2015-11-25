@@ -16,7 +16,7 @@
             if (next.originalPath !== '/' && !isAuthorized) {
                 event.preventDefault();
                 $location.url('/');
-            } else {
+            } else if (isAuthorized) {
                 UTIL.clearHTMLSignInIdentif();
             }
 

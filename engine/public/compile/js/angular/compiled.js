@@ -33399,7 +33399,7 @@ angular.module('ngAnimate', [])
             if (next.originalPath !== '/' && !isAuthorized) {
                 event.preventDefault();
                 $location.url('/');
-            } else {
+            } else if (isAuthorized) {
                 UTIL.clearHTMLSignInIdentif();
             }
 
@@ -34098,53 +34098,6 @@ mod.filter('routeSegmentParam', ['$routeSegment', function($routeSegment) {
 
 })(angular);
 
-/**
- * Created by Cronix-23-ZTan on 18.11.2015.
- * Auth service
- */
-'use strict';
-(function(angular) {
-    angular.module('terminal')
-        .service('authorizationService'
-                ,['$http'
-                , function($http) {
-
-            function initialize(userData) {
-
-                return new Promise(function (resolve, reject){
-                    var rej  = reject;
-
-                    $http.post('/terminal/identify', userData).
-                    then(function (response) {
-                        var userInfoObj = response.data,
-                            userData = userInfoObj.userData;
-
-                       resolve(userInfoObj.authStatus);
-                    }, function (reject) {
-                        rej('Возникла ошибка при идентификации');
-                    });
-
-
-                });
-
-
-
-            }
-
-
-
-            return {
-                launch : initialize
-            };
-
-        }]);
-
-
-
-
-
-
-}(angular));
 /**
  * Restful Resources service for AngularJS apps
  * @version v1.4.0 - 2015-04-03 * @link https://github.com/mgonto/restangular
@@ -35509,8 +35462,8 @@ angular.module('terminal')
         // route for the home page
             .when('/', 'login')
             .segment('login', {
-                templateUrl : '/viewPartials/terminal/signUp.html',
-                controller  : 'signUpController'
+                templateUrl : '/viewPartials/terminal/index.html',
+                controller  : 'mainTerminalController'
             })
 
             // route for the about page
@@ -35530,6 +35483,149 @@ angular.module('terminal')
 
         $routeProvider.otherwise({redirectTo: '/'});
     });
+/**
+ * Created by Cronix-23-ZTan on 25.11.2015.
+ */
+(function(window){
+    "use strict";
+
+    angular.module('terminal')
+        .controller('authController', ['$scope'
+            , 'authorizationService'
+            , function($scope
+                ,authorizationService) {
+
+                $scope.isAuthorized = UTIL.getCookie('isAuthorized') || false;
+
+                /* defence from hack attack from outside */
+                $scope.$watch('isAuthorized', function() {
+                    /* we must check cookie because it was created when success auth */
+                    if (!UTIL.getCookie('isAuthorized')) {$scope.isAuthorized = false; }
+                });
+
+                /* Auth request to server */
+                $scope.identify = function (user){
+                    var userData = angular.copy(user),
+                        success,
+                        error;
+
+                    authorizationService.launch(userData).then(
+                        success => {
+                            // send status to mainTerminalController
+                            //$scope.$emit('auth', success);
+                            operateAuthStatus($scope, success);
+                        },
+                        error => {console.log(error)}
+                    );
+
+                };
+
+            }]);
+
+
+    /* Handle server auth response */
+    function operateAuthStatus($scope, authStatus) {
+        var mainTerminalControllerScope = $scope.$parent;
+
+        switch (authStatus) {
+            case 0 :
+                console.log('Пользователь не найден');
+
+                break;
+            case 1 :
+                UTIL.clearHTMLSignInIdentif();
+                mainTerminalControllerScope.$apply(function(){
+                    mainTerminalControllerScope.isAuthorized = true;
+                });
+                break;
+            case 2 :
+                console.log('Неверный пароль');
+
+                break;
+        }
+    }
+}(window));
+
+
+(function(window) {
+    "use strict";
+
+    angular.module("terminal")
+        .directive("signIn", function () {
+           return {
+               templateUrl : "/viewPartials/authorize/authForm.html",
+               restrict : "E",
+               controller : "authController",
+               scope : false,
+
+               link : function (scope, element, atributes) {
+
+               }
+           };
+        });
+
+}(window));
+/**
+ * Created by Cronix-23-ZTan on 18.11.2015.
+ * Auth service
+ */
+'use strict';
+(function(angular) {
+    angular.module('terminal')
+        .service('authorizationService'
+                ,['$http'
+                , function($http) {
+
+            function initialize(userData) {
+
+                return new Promise(function (resolve, reject){
+                    var rej  = reject;
+
+                    $http.post('/terminal/identify', userData).
+                    then(function (response) {
+                        var userInfoObj = response.data,
+                            userData = userInfoObj.userData;
+
+                       resolve(userInfoObj.authStatus);
+                    }, function (reject) {
+                        rej('Возникла ошибка при идентификации');
+                    });
+
+
+                });
+
+
+
+            }
+
+
+
+            return {
+                launch : initialize
+            };
+
+        }]);
+
+
+
+
+
+
+}(angular));
+(function(window){
+	"use strict";
+
+	angular.module('terminal')
+		.controller('mainTerminalController', ['$scope'
+			, function($scope) {
+
+
+
+	}]);
+
+}(window));
+
+
 (function (window) {
     angular.module('terminal')
         .controller('terminalCreateArticle',['$scope', '$http', function ($scope, $http) {
@@ -35639,61 +35735,6 @@ angular.module('terminal')
 
         }]);
 }(window));
-(function(window){
-	"use strict";
-
-	angular.module('terminal')
-		.controller('signUpController', ['$scope'
-			, 'authorizationService'
-			, function($scope
-					,authorizationService) {
-
-		var authCookie = UTIL.getCookie('isAuthorized') || false;
-		$scope.isAuthorized = authCookie;
-
-		/* defence from hack attack from outside */
-		$scope.$watch('isAuthorized', function() {
-			if (!authCookie) {$scope.isAuthorized = false; }
-		});
-
-		/* Auth request to server */
-		$scope.identify = function (user){
-            var userData = angular.copy(user);
-
-			authorizationService.launch(userData).then(
-					success => {
-						operateAuthStatus($scope, success)
-					},
-					error => {console.log(error)}
-			);
-
-        };
-
-	}]);
-
-	/* Handle server auth response */
-	function operateAuthStatus($scope, authStatus) {
-
-		switch (authStatus) {
-			case 0 :
-				console.log('Пользователь не найден');
-
-				break;
-			case 1 :
-				UTIL.clearHTMLSignInIdentif();
-				$scope.isAuthorized = true;
-				$scope.$apply();
-
-				break;
-			case 2 :
-				console.log('Неверный пароль');
-
-				break;
-		}
-	}
-}(window));
-
-
 (function (window) {
     angular.module('terminal')
         .controller('terminalController', ['$scope','$http', '$location', function($scope, $http, $location) {
