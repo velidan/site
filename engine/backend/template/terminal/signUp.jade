@@ -1,0 +1,18 @@
+extends ../layouts/mainTerminalLayout
+
+block header
+
+block top
+    h1 Запрашивается идентификация
+block body
+    form(method="post",enctype="multipart/form-data",id="loginForm")
+        label Логин
+        input(type="text",name="login",placeholder="Логин")
+        label Пароль
+        input(type="password",name="password",placeholder="Пароль")
+        button Идентификация
+
+block footer
+    a(href="/") На главную
+
+block scripts

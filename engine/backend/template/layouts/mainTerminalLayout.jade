@@ -1,0 +1,27 @@
+doctype html
+html(data-ng-app="terminal",class="signIn")
+    head
+        meta(http-equiv="Content-Type",content="text/html; charset=UTF-8")
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+        title Terminal
+        link(href="/compile/css/compiled.css",rel="stylesheet",type="text/css")
+
+
+
+        script(type='text/javascript',src="/compile/js/utility/compiled.js")
+        script(type='text/javascript',src="/compile/js/angular/compiled.js")
+
+        block header
+    body(class="nav-md hold-transition skin-blue sidebar-mini")
+
+        block top
+
+        <!-- div(class="bodyBox animate" data-ng-include='templateUrl') -->
+        <!-- div(class="bodyBox animate" data-ng-view) -->
+        div(class="bodyBox animate" data-app-view-segment="0")
+        block body
+
+        block footer
+        script(type='text/javascript',src="/compile/js/thirdparty/compiledFooter.js")
