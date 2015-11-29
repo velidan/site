@@ -7,7 +7,7 @@
 							,authService) {
 
 				authService.checkAuthStatus($scope);
-				
+
 	}]);
 
 }(window));

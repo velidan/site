@@ -11,11 +11,11 @@ angular.module('terminal')
             })
 
             // route for the about page
-            .when('/panel', 'main')
+    /*        .when('/panel', 'main')
             .segment('main',{
-                templateUrl : '/viewPartials/terminal/terminal.html',
+                templateUrl : '/viewPartials/terminal/panel.html',
                 controller  : 'terminalController'
-            })
+            })*/
 
             // route for the contact page
             .when('/media', 'media')

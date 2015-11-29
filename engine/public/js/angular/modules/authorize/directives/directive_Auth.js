@@ -4,12 +4,12 @@
     angular.module("terminal")
         .directive("signIn", function () {
            return {
-               templateUrl : "/viewPartials/authorize/authForm.html",
+               templateUrl : "/js/angular/modules/authorize/templates/authForm.html",
                restrict : "E",
                controller : "authController",
                scope : false,
 
-               link : function (scope, element, atributes) {
+               link : function (scope, element, attributes) {
 
                }
            };
